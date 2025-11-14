@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Live Projection</title>
 <style>
+  /* Reset */
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   html, body {
@@ -14,7 +15,7 @@
     overflow: hidden;
   }
 
-  /* Fullscreen video container with fade-in */
+  /* Fullscreen video container */
   .video-container {
     position: fixed;
     top: 0;
@@ -25,15 +26,10 @@
     justify-content: center;
     align-items: center;
     background: #000;
-    opacity: 0;
-    animation: fadeIn 3s forwards;
+    opacity: 1; /* immediate display to avoid animation issues */
   }
 
-  @keyframes fadeIn {
-    to { opacity: 1; }
-  }
-
-  /* Subtle ambient glow around video */
+  /* Subtle ambient glow */
   .video-container::before {
     content: "";
     position: absolute;
@@ -64,7 +60,6 @@
     letter-spacing: 0.05em;
     pointer-events: none;
   }
-
 </style>
 </head>
 <body>
